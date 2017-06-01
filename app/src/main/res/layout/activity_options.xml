@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <com.warrior.hangsu.administrator.mangaeasywatch.utils.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        app:left_background="@drawable/back"
+        app:title_text="设置"
+        app:title_textColor="#ffffff"
+        app:topbar_background="@color/top_bar">
+
+    </com.warrior.hangsu.administrator.mangaeasywatch.utils.TopBar>
+
+    <TextView
+        android:id="@+id/teach_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:gravity="center_horizontal"
+        android:text="重看教程"
+        android:textColor="#181717"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:background="@color/top_bar"></ImageView>
+
+    <TextView
+        android:id="@+id/exceptions_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:gravity="center_horizontal"
+        android:text="免责条款"
+        android:textColor="#181717"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:background="@color/top_bar"></ImageView>
+
+    <TextView
+        android:id="@+id/statisctics_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:gravity="center_horizontal"
+        android:text="数据统计"
+        android:textColor="#181717"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:background="@color/top_bar"></ImageView>
+
+    <TextView
+        android:id="@+id/check_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:gravity="center_horizontal"
+        android:text="检查更新"
+        android:textColor="#181717"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:background="@color/top_bar"></ImageView>
+
+    <TextView
+        android:id="@+id/contact_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:gravity="center_horizontal"
+        android:text="联系作者"
+        android:textColor="#181717"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:background="@color/top_bar"></ImageView>
+</LinearLayout>

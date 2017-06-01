@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="${relativePackage}.${activityClass}">
+
+    <TextView
+        android:id="@+id/explain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:gravity="center_horizontal"
+        android:text="hello_world"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/explain"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:gravity="center_horizontal"
+        android:text="说明" />
+
+    <EditText
+        android:id="@+id/manga_name_et"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/amount"
+        android:hint="xxxx" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amount"
+        android:layout_marginLeft="@dimen/reptile_margin_t"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/manga_name_et"
+        android:text="--漫画名称" />
+
+
+    <EditText
+        android:id="@+id/manga_path"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/manga_name_et"
+        android:layout_marginTop="@dimen/reptile_margin_t"
+        android:hint="地址" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/manga_name_et"
+        android:layout_marginLeft="@dimen/reptile_margin_t"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/manga_path"
+        android:text="--漫画地址" />
+
+    <View
+        android:id="@+id/view_holder"
+        android:layout_width="5dp"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true"></View>
+
+    <Button
+        android:id="@+id/clean_btn"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/manga_name_et"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_click_rewrite"
+        android:gravity="center"
+        android:text="清空"
+        android:textColor="@drawable/btn_text_click_rewrite" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/view_holder"
+        android:background="@drawable/btn_click_rewrite"
+        android:text="开始下载"
+        android:textColor="@drawable/btn_text_click_rewrite" />
+
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/view_holder"
+        android:background="@drawable/btn_click_rewrite"
+        android:gravity="center"
+        android:text="停止下载"
+        android:textColor="@drawable/btn_text_click_rewrite" />
+</RelativeLayout>

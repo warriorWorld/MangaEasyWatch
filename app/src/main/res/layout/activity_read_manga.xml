@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mangalist.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.warrior.hangsu.administrator.mangaeasywatch.utils.TopBar
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            app:left_background="@drawable/back"
+            app:right_background="@drawable/focus"
+            app:title_textColor="#ffffff"
+            app:topbar_background="@color/top_bar">
+
+        </com.warrior.hangsu.administrator.mangaeasywatch.utils.TopBar>
+
+        <com.warrior.hangsu.administrator.mangaeasywatch.readmanga.HackyViewPager
+            android:id="@+id/manga_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_bar"
+            android:layout_centerInParent="true"
+            android:clipToPadding="false"
+            android:paddingLeft="80dp"
+            android:paddingRight="80dp">
+
+        </com.warrior.hangsu.administrator.mangaeasywatch.readmanga.HackyViewPager>
+
+        <View
+            android:id="@+id/show_seek_bar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"></View>
+
+        <ImageView
+            android:id="@+id/favorite_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/show_seek_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/like2"
+            android:visibility="gone"></ImageView>
+
+        <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            app:dsb_max="100"
+            app:dsb_min="1" />
+    </RelativeLayout>
+
+    <com.warrior.hangsu.administrator.mangaeasywatch.shotscreen.ShotView
+        android:id="@+id/shot_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+</FrameLayout>

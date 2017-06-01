@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mangalist.MainActivity">
+
+    <com.warrior.hangsu.administrator.mangaeasywatch.utils.TopBar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        app:left_background="@drawable/back"
+        app:title_text="教程"
+        app:title_textColor="#ffffff"
+        app:topbar_background="@color/top_bar"></com.warrior.hangsu.administrator.mangaeasywatch.utils.TopBar>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_bar">
+
+    </android.support.v4.view.ViewPager>
+
+    <Button
+        android:id="@+id/finish_teach"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:background="#5c15947f"
+        android:text="完成教程"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

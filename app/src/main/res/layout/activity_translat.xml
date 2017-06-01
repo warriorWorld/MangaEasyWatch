@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mangalist.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/translate_rl"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="2dp">
+
+        <EditText
+            android:id="@+id/translate_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_toLeftOf="@+id/ok_btn"
+            android:hint="输入要查询的单词"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/ok_btn"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="2dp"
+            android:layout_toLeftOf="@+id/clean_btn"
+            android:background="@drawable/btn_click_rewrite"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@drawable/btn_text_click_rewrite" />
+
+        <Button
+            android:id="@+id/clean_btn"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/btn_click_rewrite"
+            android:gravity="center"
+            android:text="清空"
+            android:textColor="@drawable/btn_text_click_rewrite" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/translate_result_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/translate_rl"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="4dp"
+        android:background="#bc51c2bb"
+        android:padding="3dp"
+        android:textColor="#ffffff"
+        android:textSize="22sp" />
+
+</RelativeLayout>

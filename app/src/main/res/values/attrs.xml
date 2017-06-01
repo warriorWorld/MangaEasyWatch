@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TopBar">
+        <attr name="topbar_background" format="reference|color"></attr>
+        <attr name="left_press_background" format="reference|color"></attr>
+        <attr name="left_background" format="reference|color"></attr>
+        <attr name="left_textSize" format="dimension|reference"></attr>
+        <attr name="left_text" format="string|reference"></attr>
+        <attr name="left_textColor" format="color" />
+        <attr name="right_background" format="reference|color"></attr>
+        <attr name="right_textSize" format="dimension|reference"></attr>
+        <attr name="right_text" format="string|reference"></attr>
+        <attr name="right_textColor" format="color" />
+        <attr name="title_text" format="string|reference"></attr>
+        <attr name="title_textSize" format="dimension|reference"></attr>
+        <attr name="title_textColor" format="color" />
+        <attr name="title_src" format="reference|color"></attr>
+    </declare-styleable>
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundColor" format="color" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="roundWidth" format="dimension"></attr>
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="max" format="integer"></attr>
+        <attr name="textIsDisplayable" format="boolean"></attr>
+        <attr name="style">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="broken_line">
+        <attr name="axle_type">
+            <flag name="fullxy" value="0"></flag>
+            <flag name="halfx" value="1"></flag>
+            <flag name="halfxy" value="2"></flag>
+        </attr>
+        <attr name="arrows_size" format="integer"></attr>
+        <attr name="number_mark_size" format="integer"></attr>
+        <attr name="number_size" format="integer"></attr>
+        <attr name="origin_x" format="float"></attr>
+        <attr name="origin_y" format="float"></attr>
+        <attr name="x_d_value" format="float"></attr>
+        <attr name="y_d_value" format="float"></attr>
+        <attr name="x_count" format="integer"></attr>
+        <attr name="y_count" format="integer"></attr>
+        <attr name="x_text" format="string"></attr>
+        <attr name="y_text" format="string"></attr>
+    </declare-styleable>
+</resources>
