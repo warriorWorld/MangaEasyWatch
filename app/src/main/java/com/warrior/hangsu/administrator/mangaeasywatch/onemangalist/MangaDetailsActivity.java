@@ -48,6 +48,7 @@ public class MangaDetailsActivity extends BaseActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manga_details);
         initUI();
+        ToastUtil.tipShort(this,"另一个类 gif");
 //        // 用于判断是否第一次运行
 //        String isRun = SharedPreferencesUtils.getSharedPreferencesData(this,
 //                "isrun");
