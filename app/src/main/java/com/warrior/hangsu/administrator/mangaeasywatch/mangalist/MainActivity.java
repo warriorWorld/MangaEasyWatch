@@ -76,6 +76,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initUI();
+        ToastUtil.tipShort(this, "当前在gif分支");
         if (!isNetworkConnected()) {
             nowPosition = 1;
         } else {
