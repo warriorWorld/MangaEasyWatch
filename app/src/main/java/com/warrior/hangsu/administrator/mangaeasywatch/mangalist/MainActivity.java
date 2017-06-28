@@ -77,6 +77,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         setContentView(R.layout.activity_main);
         initUI();
         ToastUtil.tipShort(this, "当前在master分支");
+        ToastUtil.tipLong(this, "当前在gif分支");
         if (!isNetworkConnected()) {
             nowPosition = 1;
         } else {
@@ -229,6 +230,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void initUI() {
+        ToastUtil.tipShort(this,"initUI中 gif分支");
         pager = (ViewPager) findViewById(R.id.view_pager);
         reptile = findViewById(R.id.reptile);
         reptileing = findViewById(R.id.reptileing);

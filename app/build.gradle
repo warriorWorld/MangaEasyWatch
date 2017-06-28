@@ -18,6 +18,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+    allprojects {
+        repositories {
+            mavenCentral()
+        }
+    }
 }
 
 dependencies {
@@ -50,4 +60,5 @@ dependencies {
     compile 'com.commit451:PhotoView:1.2.5'
     compile 'org.adw.library:discrete-seekbar:1.0.1'
     compile files('libs/jsoup-1.7.2.jar')
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.7'
 }
