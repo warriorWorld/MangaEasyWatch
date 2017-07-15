@@ -78,6 +78,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         initUI();
         ToastUtil.tipShort(this, "当前在master分支");
         ToastUtil.tipLong(this, "当前在gif分支");
+        //我来试一下家里的电脑
         if (!isNetworkConnected()) {
             nowPosition = 1;
         } else {
