@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -285,7 +286,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 showBaseEditDialog(new OnEditResultListener() {
                     @Override
                     public void onResult(String text) {
-                        ToastUtil.tipShort(MainActivity.this, NumUtils.doubleDecimals(text));
+                        ToastUtil.tipShort(MainActivity.this,
+                                BaseParameterUtil.getInstance().getBattery(MainActivity.this, Integer.valueOf(text)) + "");
                     }
 
                     @Override
@@ -305,7 +307,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         "\n后置摄像头像素:" + CameraUtils.getCameraPixels(CameraUtils.HasBackCamera()) +
                         "\n内存:" + BaseParameterUtil.getInstance().getmem_UNUSED(MainActivity.this) + "/"
                         + BaseParameterUtil.getInstance().getmem_TOLAL() +
-                        "\n启动耗时:" + getCreatePeriod());
+                        "\n启动耗时:" + getCreatePeriod() +
+                        "\n存储空间:" + BaseParameterUtil.getInstance().isExternalStorageAvailable() + "/" +
+                        BaseParameterUtil.getInstance().getAvailableInternalMemorySize(MainActivity.this) + "/" +
+                        BaseParameterUtil.getInstance().getInternalMemorySize(MainActivity.this) + "/" +
+                        BaseParameterUtil.getInstance().getAvailableExternalMemorySize(MainActivity.this) + "/" +
+                        BaseParameterUtil.getInstance().getExternalMemorySize(MainActivity.this) +
+                        "\nCPU:" + BaseParameterUtil.getInstance().getCpuType() +
+                        "\n电量:" + BaseParameterUtil.getInstance().getBattery
+                        (MainActivity.this, BatteryManager.BATTERY_STATUS_NOT_CHARGING) +
+                        "\n蓝牙:" + !BaseParameterUtil.getInstance().notHasBlueTooth() + "/" +
+                        BaseParameterUtil.getInstance().getBlueToothState() +
+                        "\n语言:" + BaseParameterUtil.getInstance().getLanguage(MainActivity.this) +
+                        "\n光感有无:" + !BaseParameterUtil.getInstance().notHasLightSensorManager(MainActivity.this)+
+                        "\n运营商:" + BaseParameterUtil.getInstance().getProvidersName(MainActivity.this));
+
             }
 
             @Override
