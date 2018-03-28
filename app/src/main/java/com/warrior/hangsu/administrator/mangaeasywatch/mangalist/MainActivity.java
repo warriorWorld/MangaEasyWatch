@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.wandoujia.ads.sdk.Ads;
 import com.warrior.hangsu.administrator.mangaeasywatch.R;
+import com.warrior.hangsu.administrator.mangaeasywatch.listener.OnEditResultListener;
 import com.warrior.hangsu.administrator.mangaeasywatch.options.OptionsActivity;
 import com.warrior.hangsu.administrator.mangaeasywatch.readmanga.DepthPageTransformer;
 import com.warrior.hangsu.administrator.mangaeasywatch.reptile.ReptileListActivity;
@@ -34,6 +35,7 @@ import com.warrior.hangsu.administrator.mangaeasywatch.teach.TeachActivity;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.BaseActivity;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.BaseParameterUtil;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.Globle;
+import com.warrior.hangsu.administrator.mangaeasywatch.utils.NumUtils;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.SharedPreferencesUtils;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.ToastUtil;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.TopBar;
@@ -227,7 +229,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             reptile.setBackgroundResource(R.drawable.reptile);
             reptileing.setVisibility(View.GONE);
         }
-        ToastUtil.tipLong(this, BaseParameterUtil.getInstance(this).getIPAddress(this));
     }
 
     private void initUI() {
@@ -273,12 +274,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         topBar.setTopBarLongClickLister(new TopBar.OnTopBarLongClickListener() {
             @Override
             public void onLeftLongClick() {
+                showBaseEditDialog(new OnEditResultListener() {
+                    @Override
+                    public void onResult(String text) {
+                        ToastUtil.tipShort(MainActivity.this, NumUtils.doubleDecimals(text));
+                    }
 
+                    @Override
+                    public void onCancelClick() {
+
+                    }
+                });
             }
 
             @Override
             public void onRightLongClick() {
-
+                showBaseDialog("test", "IP: " + BaseParameterUtil.getInstance().
+                        getIPAddress(MainActivity.this) +
+                        "\n分辨率:" + BaseParameterUtil.getInstance().getSize(MainActivity.this) +
+                        "\n屏幕尺寸:" +BaseParameterUtil.getInstance().getScreenSizeOfDevice2(MainActivity.this));
             }
 
             @Override

@@ -1,5 +1,6 @@
 package com.warrior.hangsu.administrator.mangaeasywatch.utils;
 
+import java.math.RoundingMode;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -85,5 +86,24 @@ public class NumUtils {
             }
         }
         return res;
+    }
+
+    public static String doubleDecimals(double num) {
+        try {
+            java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
+            df.setRoundingMode(RoundingMode.FLOOR);
+            return df.format(num);
+        } catch (Exception e) {
+            Logger.d(e + ":doubleDecimals");
+            return num + "";
+        }
+    }
+
+    public static String doubleDecimals(String num) {
+        try {
+            return doubleDecimals(Double.valueOf(num));
+        } catch (NumberFormatException e) {
+            return num;
+        }
     }
 }

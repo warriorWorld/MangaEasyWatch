@@ -1,10 +1,15 @@
 package com.warrior.hangsu.administrator.mangaeasywatch.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
+import android.util.DisplayMetrics;
+import android.util.Log;
 
 import java.net.Inet4Address;
 import java.net.InetAddress;
@@ -17,22 +22,20 @@ import java.util.Enumeration;
  */
 
 public class BaseParameterUtil {
-    private Context context;
 
-    private BaseParameterUtil(Context context) {
-        this.context = context;
+    private BaseParameterUtil() {
         init();
     }
 
     private static volatile BaseParameterUtil instance = null;
 
-    public static BaseParameterUtil getInstance(Context context) {
+    public static BaseParameterUtil getInstance() {
         if (instance == null) {
             //线程锁定
             synchronized (BaseParameterUtil.class) {
                 //双重锁定
                 if (instance == null) {
-                    instance = new BaseParameterUtil(context);
+                    instance = new BaseParameterUtil();
                 }
             }
         }
@@ -85,5 +88,29 @@ public class BaseParameterUtil {
                 ((ip >> 8) & 0xFF) + "." +
                 ((ip >> 16) & 0xFF) + "." +
                 (ip >> 24 & 0xFF);
+    }
+
+    /**
+     * 分辨率
+     */
+    public String getSize(Activity context) {
+        Point point = new Point();
+        context.getWindowManager().getDefaultDisplay().getSize(point);
+        return point.toString();
+    }
+
+    public String getScreenSizeOfDevice2(Activity context) {
+        Point point = new Point();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            context.getWindowManager().getDefaultDisplay().getRealSize(point);
+
+            DisplayMetrics dm = context.getResources().getDisplayMetrics();
+            double x = Math.pow(point.x / dm.xdpi, 2);
+            double y = Math.pow(point.y / dm.ydpi, 2);
+            double screenInches = Math.sqrt(x + y);
+            return screenInches + "";
+        } else {
+            return "";
+        }
     }
 }

@@ -149,6 +149,22 @@ public class TopBar extends LinearLayout {
                 return true;
             }
         });
+        leftLayout.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (null != ll)
+                    ll.onLeftLongClick();
+                return true;
+            }
+        });
+        rightLayout.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (null != ll)
+                    ll.onRightLongClick();
+                return true;
+            }
+        });
     }
 
     public void setOnTopBarClickListener(OnTopBarClickListener l) {
