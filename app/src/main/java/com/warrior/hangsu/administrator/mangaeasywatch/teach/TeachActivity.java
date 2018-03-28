@@ -25,6 +25,7 @@ import com.warrior.hangsu.administrator.mangaeasywatch.shotscreen.ScreenShot;
 import com.warrior.hangsu.administrator.mangaeasywatch.shotscreen.ShotView;
 import com.warrior.hangsu.administrator.mangaeasywatch.sort.FileComparator;
 import com.warrior.hangsu.administrator.mangaeasywatch.translate.TranslateActivity;
+import com.warrior.hangsu.administrator.mangaeasywatch.utils.BaseActivity;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.Globle;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.Logger;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.SharedPreferencesUtils;
@@ -51,7 +52,7 @@ import java.util.regex.Pattern;
  * <p/>
  * Created by Administrator on 2016/4/4.
  */
-public class TeachActivity extends Activity implements OnClickListener {
+public class TeachActivity extends BaseActivity implements OnClickListener {
     private ViewPager vp;
     private Button finishTeachBtn;
     private TopBar topBar;

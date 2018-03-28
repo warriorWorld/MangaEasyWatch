@@ -20,7 +20,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wandoujia.ads.sdk.Ads;
 import com.warrior.hangsu.administrator.mangaeasywatch.R;
@@ -45,6 +44,7 @@ import com.warrior.hangsu.administrator.mangaeasywatch.webmangadetails.WebMangaD
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener, View.OnLongClickListener {
@@ -74,6 +74,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private static final String APP_ID = "100042330";
     private static final String SECRET_KEY = "c8195274e669a7fdd38f346370b743b0";
     private static final String BANNER = "920ba5788da5ae09b6b718e6c45ac4f9";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +119,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         ConnectivityManager cm = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
         return ni != null && ni.isConnectedOrConnecting();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ToastUtil.tipShort(this, "停留时间:" + getStayPeriod());
     }
 
     private void initVP() {
@@ -293,11 +300,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 showBaseDialog("test", "IP: " + BaseParameterUtil.getInstance().
                         getIPAddress(MainActivity.this) +
                         "\n分辨率:" + BaseParameterUtil.getInstance().getSize(MainActivity.this) +
-                        "\n屏幕尺寸:" +BaseParameterUtil.getInstance().getScreenSizeOfDevice2(MainActivity.this) +
+                        "\n屏幕尺寸:" + BaseParameterUtil.getInstance().getScreenSizeOfDevice2(MainActivity.this) +
                         "\n前置摄像头像素:" + CameraUtils.getCameraPixels(CameraUtils.HasFrontCamera()) +
                         "\n后置摄像头像素:" + CameraUtils.getCameraPixels(CameraUtils.HasBackCamera()) +
-                        "\n内存:" + BaseParameterUtil.getInstance().getmem_UNUSED(MainActivity.this)+"/"
-                        + BaseParameterUtil.getInstance().getmem_TOLAL());
+                        "\n内存:" + BaseParameterUtil.getInstance().getmem_UNUSED(MainActivity.this) + "/"
+                        + BaseParameterUtil.getInstance().getmem_TOLAL() +
+                        "\n启动耗时:" + getCreatePeriod());
             }
 
             @Override
