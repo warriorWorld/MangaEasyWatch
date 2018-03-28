@@ -32,6 +32,7 @@ import com.warrior.hangsu.administrator.mangaeasywatch.reptile.ReptileMangaReade
 import com.warrior.hangsu.administrator.mangaeasywatch.sort.FileComparator3;
 import com.warrior.hangsu.administrator.mangaeasywatch.teach.TeachActivity;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.BaseActivity;
+import com.warrior.hangsu.administrator.mangaeasywatch.utils.BaseParameterUtil;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.Globle;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.SharedPreferencesUtils;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.ToastUtil;
@@ -76,8 +77,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initUI();
-        ToastUtil.tipShort(this, "当前在master分支");
-        ToastUtil.tipLong(this, "当前在gif分支");
         //我来试一下家里的电脑
         if (!isNetworkConnected()) {
             nowPosition = 1;
@@ -228,10 +227,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             reptile.setBackgroundResource(R.drawable.reptile);
             reptileing.setVisibility(View.GONE);
         }
+        ToastUtil.tipLong(this, BaseParameterUtil.getInstance(this).getIPAddress(this));
     }
 
     private void initUI() {
-        ToastUtil.tipShort(this,"initUI中 gif分支");
         pager = (ViewPager) findViewById(R.id.view_pager);
         reptile = findViewById(R.id.reptile);
         reptileing = findViewById(R.id.reptileing);

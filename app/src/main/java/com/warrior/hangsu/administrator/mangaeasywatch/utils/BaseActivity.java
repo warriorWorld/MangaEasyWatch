@@ -1,6 +1,7 @@
 package com.warrior.hangsu.administrator.mangaeasywatch.utils;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.hardware.Sensor;
@@ -23,5 +24,9 @@ public abstract class BaseActivity extends FragmentActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
     }
 
-
+    @Override
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
+        ToastUtil.tipShort(this,"previous activity:"+this.getLocalClassName());
+    }
 }
