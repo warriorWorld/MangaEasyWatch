@@ -34,6 +34,7 @@ import com.warrior.hangsu.administrator.mangaeasywatch.sort.FileComparator3;
 import com.warrior.hangsu.administrator.mangaeasywatch.teach.TeachActivity;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.BaseActivity;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.BaseParameterUtil;
+import com.warrior.hangsu.administrator.mangaeasywatch.utils.CameraUtils;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.Globle;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.NumUtils;
 import com.warrior.hangsu.administrator.mangaeasywatch.utils.SharedPreferencesUtils;
@@ -292,7 +293,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 showBaseDialog("test", "IP: " + BaseParameterUtil.getInstance().
                         getIPAddress(MainActivity.this) +
                         "\n分辨率:" + BaseParameterUtil.getInstance().getSize(MainActivity.this) +
-                        "\n屏幕尺寸:" +BaseParameterUtil.getInstance().getScreenSizeOfDevice2(MainActivity.this));
+                        "\n屏幕尺寸:" +BaseParameterUtil.getInstance().getScreenSizeOfDevice2(MainActivity.this) +
+                        "\n前置摄像头像素:" + CameraUtils.getCameraPixels(CameraUtils.HasFrontCamera()) +
+                        "\n后置摄像头像素:" + CameraUtils.getCameraPixels(CameraUtils.HasBackCamera()) +
+                        "\n内存:" + BaseParameterUtil.getInstance().getmem_UNUSED(MainActivity.this)+"/"
+                        + BaseParameterUtil.getInstance().getmem_TOLAL());
             }
 
             @Override
